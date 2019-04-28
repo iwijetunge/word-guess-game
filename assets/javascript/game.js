@@ -78,13 +78,13 @@
         }
 
         function resetAfterWin() {
-           // console.log(currentName);  
+/*            // console.log(currentName);  
             
-            //document.getElementById("myAudio").src = "assets/sounds/" + currentName +".m4a"; 
-            //var x = document.getElementById("myAudio");
+            document.getElementById("myAudio").src = "assets/sounds/" + currentName +".m4a"; 
+            var x = document.getElementById("myAudio");
             //console.log(x);
-            //x.play();
-
+            x.play();
+ */
             document.getElementById("imgID").src = "assets/images/" + currentName +".jpg";   
         
             playerHasWon=false;
