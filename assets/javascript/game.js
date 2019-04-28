@@ -3,7 +3,7 @@
         imageIndex = "assets/images/" + "chess" +".jpg"
         document.getElementById("imgID").src = imageIndex; 
      
-        var chessPlayers = ["ALEXANDER ALEKHINE","ANATOLY KARPOV","ARON NIMZOWITSCH","BOBBY FISCHER","BORIS SPASSKY","EMANUEL LASKER","HIKARU NAKAMURA","JOSE CAPABLANCA","JUDITH POLGAR","MAGNUS CARLSEN","MIKHAIL BOTVINNIK","PAUL MORPHY","SIEGBERT TARRASCH","VASSILY IVANCHUK" ];
+        var chessPlayers = ["ALEXANDER_ALEKHINE","ANATOLY_KARPOV","ARON_NIMZOWITSCH","BOBBY_FISCHER","BORIS_SPASSKY","EMANUEL_LASKER","HIKARU_NAKAMURA","JOSE_CAPABLANCA","JUDITH_POLGAR","MAGNUS_CARLSEN","MIKHAIL_BOTVINNIK","PAUL_MORPHY","SIEGBERT_TARRASCH","VASSILY_IVANCHUK" ];
         const maxLettersInName = 21;
         var numberOfGuesses = 13;
         var losses = 0;
@@ -36,7 +36,7 @@
         var elementNumber = (Math.floor(Math.random() * 14));
                 currentName = chessPlayers[elementNumber];
                 for (i=0;i<chessPlayers[elementNumber].length;i++)  {
-                    if (chessPlayers[elementNumber][i] ==  " " ) {
+                    if (chessPlayers[elementNumber][i] ==  "_" ) {
                          document.getElementById("c"+i).textContent= '\xa0';
                     }
                     else {
