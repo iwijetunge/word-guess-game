@@ -1,7 +1,3 @@
-
-
-        imageIndex = "assets/images/" + "chess" +".jpg"
-        document.getElementById("imgID").src = imageIndex; 
      
         var chessPlayers = ["ALEXANDER_ALEKHINE","ANATOLY_KARPOV","ARON_NIMZOWITSCH","BOBBY_FISCHER","BORIS_SPASSKY","EMANUEL_LASKER","HIKARU_NAKAMURA","JOSE_CAPABLANCA","JUDITH_POLGAR","MAGNUS_CARLSEN","MIKHAIL_BOTVINNIK","PAUL_MORPHY","SIEGBERT_TARRASCH","VASSILY_IVANCHUK" ];
         const maxLettersInName = 21;
@@ -18,16 +14,16 @@
         }
 
         function playerHasWonF(){
-            var temp = true;
+            playerHasWon = true;
             for (i=0;i<currentName.length;i++)  {
                 //console.log(document.getElementById("c"+i).textContent)
                 //console.log(currentName[i]);
                 if (document.getElementById("c"+i).textContent ==  "_" ) {
-                     temp=false;
+                    playerHasWon=false;
+                    break;
                 }               
             }
-            playerHasWon = temp;
-            //console.log(playerHasWon);
+         
         }
        
         function initializeGuess() {      
@@ -78,13 +74,13 @@
         }
 
         function resetAfterWin() {
-/*            // console.log(currentName);  
-            
-            document.getElementById("myAudio").src = "assets/sounds/" + currentName +".m4a"; 
-            var x = document.getElementById("myAudio");
-            //console.log(x);
-            x.play();
- */
+
+           // console.log(currentName);             
+           //document.getElementById("myAudio").src = "assets/sounds/" + currentName +".m4a"; 
+           //var x = document.getElementById("myAudio");
+           // console.log(x);
+           // x.play();
+
             document.getElementById("imgID").src = "assets/images/" + currentName +".jpg";   
         
             playerHasWon=false;
@@ -105,15 +101,14 @@
             numberOfGuesses = 13;
             score.textContent = numberOfGuesses ;
             input.textContent = "";
-            
             document.getElementById("imgID").src = "assets/images/chess.jpg"; 
         }
                 
-        initializeGuess() ;
+    initializeGuess() ;
      
-                  document.onkeyup = function(event) {
+    document.onkeyup = function(event) {
             updateCurrentName(event.key);
-            //updateInputVariable(event.key)
+         
             if (numberOfGuesses==0) {
                   resetAfterLoss();                 
             }
@@ -123,10 +118,9 @@
                 }
                 else {         
                 updateCurrentName(event.key);
-                updateInputVariable(event.key);
-                
+                updateInputVariable(event.key);                
                 score.textContent = numberOfGuesses;
             }                               
         }
     }
-     // }
+   
